@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Document</title>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body dir="rtl">
+    <div class="container"
+        style="width: calc(100% - 30px); background-color:#EEE; margin-top: 5%; padding: 25px; border-radius: 8px; width: 70%;">
+        <form action="" method="post" class="row g-3">
+            <div class="col-4">
+                <select  name="ss" class="form-select" aria-label="Default select example" >
+                    <option selected> المدينة</option>
+                    <option value="1">جدة</option>
+                    <option value="2">الرياض</option>
+                    <option value="3">دبي</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <select name="sb_entire_place" class="form-select" aria-label="Default select example">
+                    <option selected>نوع السكن</option>
+                    <option value="1">فندق</option>
+                    <option value="2">شقق</option>
+                   
+                </select>
+            </div>
+            <div class="col-4">
+                <input type="number"  name="group_adults" class="form-control"  id="xx" placeholder="عدد الساكنين" >
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <div class="input-group-text" style="border-radius: 0px 10px 10px 0px" value="" >دخول</div>
+                    <input name="checkin" type="date" class="form-control" id="inlineFormInputGroupUsername"
+                        style="border-radius: 10px 0px 0px 10px">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <div class="input-group-text" style="border-radius: 0px 10px 10px 0px">خروج</div>
+                    <input  name="checkout" type="date" class="form-control" id="inlineFormInputGroupUsername"
+                        style="border-radius: 10px 0px 0px 10px">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary" style="width: 100%">
+                  ابحث
+                </button>
+              </div>
+        </form>
+    </div>
+    <div class="container-fluid" style=" margin-top: 2%;padding: 20px; border-radius: 8px;">
+        <table class="table ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">المدينة</th>
+                    <th scope="col">السكن</th>
+                    <th scope="col">التاريخ</th>
+                    <th scope="col">عدد الأيام</th>
+                    <th scope="col">السعر</th>
+                    <th scope="col">التقييم</th>
+                    <th scope="col">رابط الحجز</th>
+                    <th scope="col">إرسال الطلب</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+
+                
+
+
+                {% for hotel in hotels %}
+                
+                <tr>
+                    <th scope="row">#</th>
+                    <!-- <td colspan="2">Larry the Bird</td> -->
+                    <td>{{hotel.location}}</td>
+                    <td>{{hotel.name}}</td>
+                    <td>{{checkin}}&&{{checkout}}</td>
+                    <td>{{day}}</td>
+                    <td>{{hotel.price}}</td>
+                    <td>{{hotel.evaluation}}</td>
+                    <td><a href='{{hotel.url}}' > رابط الحجز </a>    </td>
+                    <td  >
+                        
+                        <a style="margin: 10%;" href='https://wa.me/phone=+967735327461&message={{hotel.url}}&type=phone_number&app_absent=0' > <ion-icon name="logo-whatsapp"></ion-icon> </a>    
+                        <a style="margin: 10%;" href='mailto:abdulrahmansaudi101@gmail.com?subject=حجز فندق&body={{hotel.url}}' > <ion-icon name="mail-outline"></ion-icon> </a>    
+                    </td>
+                    
+                </tr>
+                
+                {% endfor %}
+
+
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

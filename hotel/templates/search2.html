@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hotel </title>
+    <link rel="stylesheet" href="{% static 'fonts/all.css'%}">
+    <link rel="stylesheet" href="{%static 'css/hotel/style.css'%}">
+</head>
+<body>
+    
+    <nav class="nav">
+        <ul class="ul">
+            <li class="li">HOME</li>
+            <li class="li">ROOMS</li>
+            <li class="li">WHY CHOOSE US</li>
+            <li class="li">STAFF</li>
+            <li class="li">GALLERY</li>
+        </ul>
+        <input type="text" class="search" name="search" placeholder="Search">
+    </nav>
+    
+    
+    <div class="check">
+        <div class="checklb">
+            <lable >Check In</lable>
+            <input type="date" name="" value="check-in" class="checkinp" id="">
+        </div>
+        <div class="checklb">
+            <lable>Check Out</lable>
+            <input type="date" name="" value="check-out" class="checkinp" id="">
+        </div>
+        <div class="checklb">
+            <lable class="checklb">Rooms</lable>
+            <select class="secroom" name="rooms" id="rooms">
+                <option class="optroom" value="royal room">Royal Room</option>
+                <option class="optroom" value="delux room">Delux Room</option>
+                <option class="optroom" value="double room">Double Room</option>
+                <option class="optroom" value="single room">Single Room</option>
+            </select>
+        </div>
+       
+        <input type="button" value="SEARCH" id="sbtn">
+    </div>
+   
+   
+   
+   
+<script src="{% static 'fonts/all.js'%}"></script>
+</body>
+</html>

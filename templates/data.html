@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://naql-sa.orge.pw/user-profile# -->
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="https://naql-sa.orge.pw/manifest.json">
+    <link rel="shortcut icon" href="https://naql-sa.orge.pw/favicon.ico">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>NAQL Portal</title>
+    
+    <link href="./NAQL Portal_files/2.02c7c0e9.chunk.css" rel="stylesheet">
+    <link href="./NAQL Portal_files/main.964a0fd7.chunk.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/3.f2a5db20.chunk.css' %}">
+   
+  </head>
+
+  <body>
+    <div id="root">
+      <div>
+        <div dir="rtl" style="">
+          <div>
+            <div class="page-wrapper">
+              <section>
+                <header class="header clearfix">
+                  <div class="header-block">
+                    <div class="container">
+                      <button
+                        class="con navbar-toggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                      >
+                        <div class="bar top"></div>
+                        <div class="bar middle"></div>
+                        <div class="bar bottom"></div>
+                      </button>
+                      <div class="lang-switch fadeInDown animate">
+                        <button class="rmButton" type="button">English</button>
+                      </div>
+                      <a class="navbar-brand logo float-left" href=""
+                        ><img
+                          src="/static/media/naql_Logo_ar.9811fee7.png"
+                          alt="بوابة نقل "
+                          width="300"
+                      /></a>
+                      <div class="userProfile float-right">
+                        <div class="loggedDetails">
+                          <div>
+                            <div class="notification inline">
+                              <a href="/list-notification"
+                                ><div class="notification-container">
+                                  <i
+                                    class="fas fa-bell notification-icon 0"
+                                  ></i></div
+                              ></a>
+                            </div>
+                            <div class="dropdown inline">
+                              <a
+                                href="#"
+                                class="userName dropdown-toggle"
+                                data-toggle="dropdown"
+                                data-hover="dropdown"
+                                data-close-others="true"
+                              ></a>
+                              <div class="dropdown-menu">
+                                <a
+                                  class="text-wrap pl-2 dropdown-item text-primary bg-light"
+                                  href="/organization-profile"
+                                  >بيانات المنشأة</a
+                                ><a
+                                  class="text-wrap pl-2 dropdown-item text-primary bg-light"
+                                  href="/add-new-company"
+                                  >إضافة منشأة</a
+                                ><a
+                                  class="text-wrap pl-2 dropdown-item text-primary bg-light"
+                                  href="/account/switch"
+                                  >تبديل الحساب</a
+                                ><a
+                                  class="dropdown-item text-primary bg-light active"
+                                  href="/user-profile"
+                                  aria-current="page"
+                                  >الملف الشخصي</a
+                                ><a
+                                  href="/"
+                                  class="dropdown-item text-primary bg-light"
+                                  >تسجيل الخروج</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <div>
+                  <div id="permitModalDialogWin" class="permitModal modalName">
+                    <div class="permitModalContent">
+                      <div class="permitModalHeader paddedModal">
+                        <h3>يجب تحديث معلومة المدينة للحساب ⚠️</h3>
+                      </div>
+                      <div class="permitModalBody">
+                        <p>
+                          الرجاء اختيار المدينة لهذا الحساب حتى يتم اعتمادها في
+                          خدمات النقل البري
+                        </p>
+                        <div class="form-group row">
+                          <label class="col-md-2 col-form-label required"
+                            >المنطقة</label
+                          >
+                          <div class="col-md-4">
+                            <select class="form-control" id="region">
+                              <option value="">الكل</option></select
+                            ><span class="error"></span>
+                          </div>
+                          <label class="col-md-2 col-form-label required"
+                            >المدينة</label
+                          >
+                          <div class="col-md-4">
+                            <select class="form-control" id="city">
+                              <option value="">الكل</option></select
+                            ><span class="error"></span>
+                          </div>
+                        </div>
+                        <div class="permitModalFooter">
+                          <button class="btn btn-primary" type="button">
+                            تحديث
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="permitModalOverlay"></div>
+                </div>
+                <div class="container">
+                  <div class="page-layout">
+                    <div class="row">
+                      <div class="col-12 col-lg-12">
+                        <div class="page-header" id="pageHeader">
+                          <h1>الملف الشخصي</h1>
+                          <div class="d-flex flex-row-reverse btn-list">
+                            <a
+                              class="btn-grp btn btn-secondary"
+                              type="button"
+                              target="_blank"
+                              href="https://iam.naql.sa/Manage"
+                              >تحديث البيانات</a
+                            ><button
+                              class="btn-grp btn btn-secondary"
+                              type="button"
+                            >
+                              تحديث تاريخ الميلاد
+                            </button>
+                          </div>
+                        </div>
+                        <div class="pageContent Shadow-z5" id="pageContent">
+                          <div>
+                            <div>
+                              <div
+                                id="permitModalDialogWin"
+                                class="permitModal modalName"
+                              >
+                                <div class="permitModalContent">
+                                  <div class="permitModalHeader paddedModal">
+                                    <a id="anchorTag" class="permitCloseIcon"
+                                      ><i class="fa fa-times"></i
+                                    ></a>
+                                    <h3>تحديث تاريخ الميلاد</h3>
+                                  </div>
+                                  <div class="permitModalBody">
+                                    <div class="form-group row">
+                                      <label
+                                        class="col-form-label col-md-4 col-sm-4 required"
+                                        >تاريخ الميلاد</label
+                                      >
+                                      <div id="birthDate" class="col-md-8">
+                                        <div class="col-md-3 p-0">
+                                          <select
+                                            class="selectWidth form-control"
+                                            disabled=""
+                                          >
+                                            <option value="1">هجري</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-md-3 p-0">
+                                          <select
+                                            class="selectWidthYear form-control"
+                                          >
+                                            <option>السنة</option>
+                                            <option>1444</option>
+                                            <option>1443</option>
+                                            <option>1442</option>
+                                            <option>1441</option>
+                                            <option>1440</option>
+                                            <option>1439</option>
+                                            <option>1438</option>
+                                            <option>1437</option>
+                                            <option>1436</option>
+                                            <option>1435</option>
+                                            <option>1434</option>
+                                            <option>1433</option>
+                                            <option>1432</option>
+                                            <option>1431</option>
+                                            <option>1430</option>
+                                            <option>1429</option>
+                                            <option>1428</option>
+                                            <option>1427</option>
+                                            <option>1426</option>
+                                            <option>1425</option>
+                                            <option>1424</option>
+                                            <option>1423</option>
+                                            <option>1422</option>
+                                            <option>1421</option>
+                                            <option>1420</option>
+                                            <option>1419</option>
+                                            <option>1418</option>
+                                            <option>1417</option>
+                                            <option>1416</option>
+                                            <option>1415</option>
+                                            <option>1414</option>
+                                            <option>1413</option>
+                                            <option>1412</option>
+                                            <option>1411</option>
+                                            <option>1410</option>
+                                            <option>1409</option>
+                                            <option>1408</option>
+                                            <option>1407</option>
+                                            <option>1406</option>
+                                            <option>1405</option>
+                                            <option>1404</option>
+                                            <option>1403</option>
+                                            <option>1402</option>
+                                            <option>1401</option>
+                                            <option>1400</option>
+                                            <option>1399</option>
+                                            <option>1398</option>
+                                            <option>1397</option>
+                                            <option>1396</option>
+                                            <option>1395</option>
+                                            <option>1394</option>
+                                            <option>1393</option>
+                                            <option>1392</option>
+                                            <option>1391</option>
+                                            <option>1390</option>
+                                            <option>1389</option>
+                                            <option>1388</option>
+                                            <option>1387</option>
+                                            <option>1386</option>
+                                            <option>1385</option>
+                                            <option>1384</option>
+                                            <option>1383</option>
+                                            <option>1382</option>
+                                            <option>1381</option>
+                                            <option>1380</option>
+                                            <option>1379</option>
+                                            <option>1378</option>
+                                            <option>1377</option>
+                                            <option>1376</option>
+                                            <option>1375</option>
+                                            <option>1374</option>
+                                            <option>1373</option>
+                                            <option>1372</option>
+                                            <option>1371</option>
+                                            <option>1370</option>
+                                            <option>1369</option>
+                                            <option>1368</option>
+                                            <option>1367</option>
+                                            <option>1366</option>
+                                            <option>1365</option>
+                                            <option>1364</option>
+                                            <option>1363</option>
+                                            <option>1362</option>
+                                            <option>1361</option>
+                                            <option>1360</option>
+                                            <option>1359</option>
+                                            <option>1358</option>
+                                            <option>1357</option>
+                                            <option>1356</option>
+                                            <option>1355</option>
+                                            <option>1354</option>
+                                            <option>1353</option>
+                                            <option>1352</option>
+                                            <option>1351</option>
+                                            <option>1350</option>
+                                            <option>1349</option>
+                                            <option>1348</option>
+                                            <option>1347</option>
+                                            <option>1346</option>
+                                            <option>1345</option>
+                                            <option>1344</option>
+                                            <option>1343</option>
+                                            <option>1342</option>
+                                            <option>1341</option>
+                                            <option>1340</option>
+                                            <option>1339</option>
+                                            <option>1338</option>
+                                            <option>1337</option>
+                                            <option>1336</option>
+                                            <option>1335</option>
+                                            <option>1334</option>
+                                            <option>1333</option>
+                                            <option>1332</option>
+                                            <option>1331</option>
+                                            <option>1330</option>
+                                            <option>1329</option>
+                                            <option>1328</option>
+                                            <option>1327</option>
+                                            <option>1326</option>
+                                            <option>1325</option>
+                                            <option>1324</option>
+                                            <option>1323</option>
+                                            <option>1322</option>
+                                            <option>1321</option>
+                                            <option>1320</option>
+                                            <option>1319</option>
+                                            <option>1318</option>
+                                            <option>1317</option>
+                                            <option>1316</option>
+                                            <option>1315</option>
+                                            <option>1314</option>
+                                            <option>1313</option>
+                                            <option>1312</option>
+                                            <option>1311</option>
+                                            <option>1310</option>
+                                            <option>1309</option>
+                                            <option>1308</option>
+                                            <option>1307</option>
+                                            <option>1306</option>
+                                            <option>1305</option>
+                                            <option>1304</option>
+                                            <option>1303</option>
+                                            <option>1302</option>
+                                            <option>1301</option>
+                                            <option>1300</option>
+                                            <option>1299</option>
+                                            <option>1298</option>
+                                            <option>1297</option>
+                                            <option>1296</option>
+                                            <option>1295</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-md-3 p-0">
+                                          <select
+                                            disabled=""
+                                            class="selectWidthMonth form-control"
+                                          >
+                                            <option>الشهر</option>
+                                            <option>محرم</option>
+                                            <option>صفر</option>
+                                            <option>ربيع ١</option>
+                                            <option>ربيع ٢</option>
+                                            <option>جمادى ١</option>
+                                            <option>جمادى ٢</option>
+                                            <option>رجب</option>
+                                            <option>شعبان</option>
+                                            <option>رمضان</option>
+                                            <option>شوال</option>
+                                            <option>ذو القعدة</option>
+                                            <option>ذو الحجة</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-md-3 p-0">
+                                          <select
+                                            disabled=""
+                                            class="selectWidthDay form-control"
+                                          >
+                                            <option>اليوم</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="permitModalFooter">
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <button
+                                            class="btn btn-primary pull-left"
+                                          >
+                                            تحديث
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="permitModalOverlay"></div>
+                            </div>
+                            <div><h4 class="col-12">معلومات المستخدم</h4></div>
+                            <div
+                              class="card card-outline-default mb-4 boxsu-details bg-light"
+                            >
+                              <div class="card-body form-group-static">
+                                <div class="row form-group">
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >الإسم باللغة العربية</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >الإسم باللغة الإنجليزية</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row form-group">
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >رقم الهوية/الإقامة</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >تاريخ الميلاد</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row form-group">
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >البريد الإلكتروني</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >الجوال</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row form-group">
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >رقم الهاتف</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >التحويلة</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >حالة المستخدم</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      >
+                                        <span class="darkGreyBadge"
+                                          >غير مؤكد</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div id="staticCompDiv" class="staticDisplay">
+                                    <label
+                                      class="col-form-label col-md-2 col-sm-3"
+                                      >الجنسية</label
+                                    >
+                                    <div class="col-md-4">
+                                      <p
+                                        class="form-control-plaintext undefined"
+                                      ></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                           
+                            <div><h4 class="col-12">الأدوار</h4></div>
+                            <div class="checkboxContainer bg-light">
+                              <div class="scroll scroller">
+                                <fieldset></fieldset>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <footer class="footer">
+              <div class="container">
+                <div class="row w-100 text-center mb-3">
+                  <div class="col-12">
+                    <a
+                      href="https://apps.apple.com/us/app/id1598104681"
+                      class="pr-2"
+                      ><img
+                        alt="تنزيل من App store"
+                        width="155px"
+                        src="data:image/png;base64,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" /></a
+                    ><a
+                      href="https://play.google.com/store/apps/details?id=sa.gov.tga.naql&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                      ><img
+                        alt="احصل عليه من Google Play"
+                        width="155px"
+                        src="/static/media/google-play.b075e7b3.png"
+                    /></a>
+                  </div>
+                </div>
+                <div class="fl-group">
+                  <a
+                    href="/static/media/acceptable_use_policy.5beb2310.pdf"
+                    target="_blank"
+                    class="footer-link"
+                    >سياسة الاستخدام الآمن</a
+                  ><a
+                    href="/static/media/naql-user-guide.3ba1b02a.pdf"
+                    target="_blank"
+                    class="footer-link"
+                    >دليل المستخدم</a
+                  ><a
+                    class="footer-link"
+                    href="/static/media/privacy_statement_ar.f9583813.pdf"
+                    target="_blank"
+                    >بيان الخصوصية</a
+                  ><a class="footer-link">☏ 19929</a
+                  ><a class="footer-link"> ✉ hdn@tga.gov.sa</a>
+                </div>
+                <div class="footer-text">
+                  جميع الحقوق محفوظة © الهيئة العامة للنقل 2017-2022 Powered by
+                  Elm | V.19.1.5
+                </div>
+              </div>
+            </footer>
+            <div>
+              <div class="scrollTopButton" style="display: none">
+                <button class="btn btn-default">
+                  <i class="fas fa-arrow-up"></i>
+                </button>
+              </div>
+              <div class="scrollDownButton" style="display: block">
+                <button class="btn btn-default">
+                  <i class="fas fa-arrow-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
